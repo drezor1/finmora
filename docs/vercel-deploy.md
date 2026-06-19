@@ -43,7 +43,7 @@ Click **Deploy**. Build runs:
 Cron schedules are defined in [`vercel.json`](../vercel.json):
 
 - `/api/cron/roi-credit` — daily at 02:00 UTC
-- `/api/cron/notifications-dispatch` — every 15 minutes
+- `/api/cron/notifications-dispatch` — daily at 03:00 UTC (Vercel Hobby: max once/day per cron)
 
 ## 4. Database migrations (one-time)
 
