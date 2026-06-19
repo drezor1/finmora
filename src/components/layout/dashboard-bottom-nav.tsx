@@ -49,8 +49,17 @@ export function DashboardBottomNav() {
 
   return (
     <>
-      <nav className="glass-nav fixed bottom-0 left-0 right-0 z-40 border-t border-border/50 lg:hidden">
-        <div className="mx-auto flex max-w-lg items-stretch justify-around px-2 pb-[env(safe-area-inset-bottom)]">
+      {/* Bottom navigation bar */}
+      <nav
+        className="fixed bottom-0 left-0 right-0 z-40 lg:hidden"
+        style={{
+          background: "rgba(7, 9, 15, 0.92)",
+          backdropFilter: "blur(24px) saturate(180%)",
+          WebkitBackdropFilter: "blur(24px) saturate(180%)",
+          borderTop: "1px solid rgba(255,255,255,0.07)",
+        }}
+      >
+        <div className="mx-auto flex max-w-lg items-stretch justify-around px-1 pb-[env(safe-area-inset-bottom)]">
           {mainTabs.map(({ href, icon: Icon, key, exact }) => {
             const active = exact ? pathname === href : pathname.startsWith(href);
             return (
@@ -58,15 +67,23 @@ export function DashboardBottomNav() {
                 key={href}
                 href={href}
                 className={cn(
-                  "relative flex flex-1 flex-col items-center gap-0.5 py-2.5 text-[10px] font-medium transition-all",
-                  active ? "scale-105 text-accent" : "text-muted"
+                  "relative flex flex-1 flex-col items-center gap-1 py-3 text-[10px] font-medium transition-all duration-200",
+                  active ? "text-accent" : "text-muted-foreground"
                 )}
               >
-                {active && (
-                  <span className="absolute top-1 h-1 w-1 rounded-full bg-accent" />
-                )}
-                <Icon className={cn("h-5 w-5 transition-transform", active && "scale-110 text-accent")} />
+                <div className={cn(
+                  "flex h-8 w-8 items-center justify-center rounded-xl transition-all duration-200",
+                  active ? "bg-accent/15" : ""
+                )}>
+                  <Icon className={cn("h-4.5 w-4.5 transition-all", active && "scale-110")} />
+                </div>
                 {t(key)}
+                {active && (
+                  <span
+                    className="absolute top-0.5 left-1/2 -translate-x-1/2 h-0.5 w-5 rounded-full"
+                    style={{ background: "var(--accent)", boxShadow: "0 0 6px rgba(0,217,126,0.8)" }}
+                  />
+                )}
               </Link>
             );
           })}
@@ -74,58 +91,91 @@ export function DashboardBottomNav() {
             type="button"
             onClick={() => setMoreOpen(true)}
             className={cn(
-              "relative flex flex-1 flex-col items-center gap-0.5 py-2.5 text-[10px] font-medium transition-all",
-              isMoreActive || moreOpen ? "scale-105 text-accent" : "text-muted"
+              "relative flex flex-1 flex-col items-center gap-1 py-3 text-[10px] font-medium transition-all duration-200",
+              isMoreActive || moreOpen ? "text-accent" : "text-muted-foreground"
             )}
           >
-            {(isMoreActive || moreOpen) && (
-              <span className="absolute top-1 h-1 w-1 rounded-full bg-accent" />
-            )}
-            <Menu className={cn("h-5 w-5", (isMoreActive || moreOpen) && "scale-110")} />
+            <div className={cn(
+              "flex h-8 w-8 items-center justify-center rounded-xl transition-all duration-200",
+              (isMoreActive || moreOpen) ? "bg-accent/15" : ""
+            )}>
+              <Menu className="h-4.5 w-4.5" />
+            </div>
             {t("more")}
+            {(isMoreActive || moreOpen) && (
+              <span
+                className="absolute top-0.5 left-1/2 -translate-x-1/2 h-0.5 w-5 rounded-full"
+                style={{ background: "var(--accent)", boxShadow: "0 0 6px rgba(0,217,126,0.8)" }}
+              />
+            )}
           </button>
         </div>
       </nav>
 
+      {/* More drawer overlay */}
       {moreOpen && (
         <>
           <div
-            className="fixed inset-0 z-50 bg-black/50 lg:hidden"
+            className="fixed inset-0 z-50 lg:hidden"
+            style={{ background: "rgba(0,0,0,0.7)", backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)" }}
             onClick={() => setMoreOpen(false)}
           />
-          <div className="fixed inset-x-0 bottom-0 z-50 rounded-t-3xl border-t border-border bg-card p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] lg:hidden card-shadow-lg animate-in slide-in-from-bottom duration-200">
+          <div
+            className="fixed inset-x-0 bottom-0 z-50 rounded-t-3xl p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom))] lg:hidden animate-in slide-in-from-bottom duration-200"
+            style={{
+              background: "linear-gradient(180deg, #111827 0%, #0d1117 100%)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              borderBottom: "none",
+              boxShadow: "0 -8px 40px rgba(0,0,0,0.6)",
+            }}
+          >
+            {/* Handle */}
+            <div className="mx-auto mb-5 h-1 w-12 rounded-full bg-white/10" />
+
             <div className="mb-4 flex items-center justify-between">
-              <h3 className="font-semibold text-primary">{t("more")}</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+                More Options
+              </h3>
               <button
                 type="button"
                 onClick={() => setMoreOpen(false)}
-                className="rounded-lg p-1 text-muted hover:bg-background"
+                className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
               >
-                <X className="h-5 w-5" />
+                <X className="h-4 w-4" />
               </button>
             </div>
             <div className="grid grid-cols-2 gap-2">
-              {moreLinks.map(({ href, icon: Icon, key }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  onClick={() => setMoreOpen(false)}
-                  className={cn(
-                    "flex items-center gap-3 rounded-xl border border-border px-4 py-3 text-sm font-medium transition-colors",
-                    pathname === href
-                      ? "border-accent/30 bg-accent/10 text-accent"
-                      : "text-primary hover:bg-background"
-                  )}
-                >
-                  <Icon className="h-4 w-4" />
-                  {t(key)}
-                </Link>
-              ))}
+              {moreLinks.map(({ href, icon: Icon, key }) => {
+                const active = pathname === href;
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setMoreOpen(false)}
+                    className={cn(
+                      "flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all",
+                      active
+                        ? "bg-accent/10 text-accent"
+                        : "bg-white/[0.03] text-muted-foreground hover:bg-white/[0.06] hover:text-foreground"
+                    )}
+                    style={active ? { border: "1px solid rgba(0,217,126,0.2)" } : { border: "1px solid rgba(255,255,255,0.05)" }}
+                  >
+                    <div className={cn(
+                      "flex h-8 w-8 items-center justify-center rounded-lg shrink-0",
+                      active ? "bg-accent/15" : "bg-white/[0.04]"
+                    )}>
+                      <Icon className="h-4 w-4" />
+                    </div>
+                    {t(key)}
+                  </Link>
+                );
+              })}
             </div>
             <button
               type="button"
               onClick={handleLogout}
-              className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl border border-destructive/20 py-3 text-sm font-medium text-destructive hover:bg-destructive/5"
+              className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-medium text-destructive transition-colors hover:bg-destructive/10"
+              style={{ border: "1px solid rgba(240, 69, 69, 0.15)" }}
             >
               <LogOut className="h-4 w-4" />
               {t("logout")}
