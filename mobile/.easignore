@@ -1,0 +1,6 @@
+../.next
+../node_modules/.cache
+**/.expo-export
+**/.expo-export-test
+**/.expo-export-verify
+../debug-*.log

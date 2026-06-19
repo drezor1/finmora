@@ -7,15 +7,17 @@
     "mobile"
   ],
   "scripts": {
-    "postinstall": "prisma generate",
+    "postinstall": "node scripts/postinstall.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "mobile": "npm run android --workspace=mobile",
+    "mobile:start": "npm run start --workspace=mobile -- --clear",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:seed": "tsx prisma/seed.ts",
+    "db:ensure-admin": "tsx scripts/ensure-admin.ts",
     "db:studio": "prisma studio",
     "db:setup": "powershell -ExecutionPolicy Bypass -File scripts/setup-db.ps1"
   },
@@ -54,11 +56,10 @@
     "seed": "tsx prisma/seed.ts"
   },
   "overrides": {
-    "react-native": "0.76.9",
-    "metro": "0.81.5",
-    "metro-config": "0.81.5",
-    "metro-resolver": "0.81.5",
-    "expo-font": "~13.0.4",
-    "@expo/vector-icons": "~14.0.4"
+    "expo-font": "~14.0.12",
+    "@expo/vector-icons": "^15.0.3",
+    "mobile": {
+      "react": "19.1.0"
+    }
   }
 }

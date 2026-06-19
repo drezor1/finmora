@@ -1,16 +1,16 @@
 const { getDefaultConfig } = require("expo/metro-config");
-const path = require("path");
 const fs = require("fs");
+const path = require("path");
 
 const projectRoot = __dirname;
 const monorepoRoot = path.resolve(projectRoot, "..");
 const mobileModules = path.resolve(projectRoot, "node_modules");
-const logPath = path.resolve(monorepoRoot, "debug-591c3c.log");
+const debugLogPath = path.resolve(monorepoRoot, "debug-5abf2e.log");
 
 function debugLog(hypothesisId, location, message, data) {
   const line =
     JSON.stringify({
-      sessionId: "591c3c",
+      sessionId: "5abf2e",
       runId: "pre-fix",
       hypothesisId,
       location,
@@ -19,7 +19,11 @@ function debugLog(hypothesisId, location, message, data) {
       timestamp: Date.now(),
     }) + "\n";
   // #region agent log
-  fs.appendFileSync(logPath, line);
+  try {
+    fs.appendFileSync(debugLogPath, line);
+  } catch {
+    // ignore
+  }
   // #endregion
 }
 
@@ -39,36 +43,56 @@ config.resolver.nodeModulesPaths = [
 config.resolver.extraNodeModules = {
   "@finmora/theme": path.resolve(monorepoRoot, "packages/theme"),
   "@finmora/shared": path.resolve(monorepoRoot, "packages/shared"),
+  react: path.resolve(mobileModules, "react"),
+  "react/jsx-runtime": path.resolve(mobileModules, "react/jsx-runtime"),
+  "react/jsx-dev-runtime": path.resolve(mobileModules, "react/jsx-dev-runtime"),
 };
 
-let reactNativeResolveCount = 0;
+const mobileFirstPrefixes = [
+  "react",
+  "react-native",
+  "react-native-screens",
+  "react-native-safe-area-context",
+  "expo-router",
+  "@react-navigation",
+];
+
+debugLog("H1", "metro.config.js:init", "Metro resolver pinned to mobile react", {
+  mobileReact: path.resolve(mobileModules, "react"),
+  mobileReactVersion: (() => {
+    try {
+      return require(path.join(mobileModules, "react/package.json")).version;
+    } catch {
+      return null;
+    }
+  })(),
+  rootReactVersion: (() => {
+    try {
+      return require(path.join(monorepoRoot, "node_modules/react/package.json")).version;
+    } catch {
+      return null;
+    }
+  })(),
+});
+
 const defaultResolveRequest = config.resolver.resolveRequest;
 config.resolver.resolveRequest = (context, moduleName, platform) => {
-  if (
-    (moduleName === "react-native" || moduleName.startsWith("react-native/")) &&
-    reactNativeResolveCount < 5
-  ) {
-    reactNativeResolveCount += 1;
-    let forcedPath = null;
+  const preferMobile = mobileFirstPrefixes.some(
+    (pkg) => moduleName === pkg || moduleName.startsWith(`${pkg}/`)
+  );
+
+  if (preferMobile) {
     try {
-      forcedPath = require.resolve(moduleName, { paths: [mobileModules] });
-    } catch {
-      forcedPath = null;
-    }
-    // #region agent log
-    debugLog("H1", "metro.config.js:resolveRequest", "react-native resolve attempt", {
-      moduleName,
-      platform,
-      origin: context.originModulePath,
-      forcedPath,
-      forcedVersion: forcedPath
-        ? require(path.join(path.dirname(forcedPath), "package.json")).version
-        : null,
-      count: reactNativeResolveCount,
-    });
-    // #endregion
-    if (forcedPath) {
+      const forcedPath = require.resolve(moduleName, { paths: [mobileModules] });
+      if (moduleName === "react" || moduleName.startsWith("react/")) {
+        debugLog("H1", "metro.config.js:resolve", "Forced react resolution", {
+          moduleName,
+          forcedPath,
+        });
+      }
       return { type: "sourceFile", filePath: forcedPath };
+    } catch {
+      // fall through
     }
   }
 
@@ -77,26 +101,5 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
   }
   return context.resolveRequest(context, moduleName, platform);
 };
-
-try {
-  const rnPath = require.resolve("react-native/package.json", { paths: [projectRoot] });
-  const metroPath = require.resolve("metro/package.json", { paths: [projectRoot] });
-  // #region agent log
-  debugLog("H4", "metro.config.js:init", "Metro config initialized", {
-    projectRoot,
-    reactNativePath: path.dirname(rnPath),
-    reactNativeVersion: require(rnPath).version,
-    metroVersion: require(metroPath).version,
-    nodeModulesPaths: config.resolver.nodeModulesPaths,
-    watchFolders: config.watchFolders,
-  });
-  // #endregion
-} catch (e) {
-  // #region agent log
-  debugLog("H4", "metro.config.js:init", "Metro config init resolution failed", {
-    error: e.message,
-  });
-  // #endregion
-}
 
 module.exports = config;

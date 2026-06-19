@@ -7,7 +7,9 @@ import {
   Pressable,
   StyleSheet,
   ActivityIndicator,
+  Share,
 } from "react-native";
+import { useRouter } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useAuth } from "@/lib/auth";
 import { useTheme } from "@/lib/theme";
@@ -15,6 +17,7 @@ import { PortfolioHero } from "@/components/PortfolioHero";
 
 export default function HomeScreen() {
   const insets = useSafeAreaInsets();
+  const router = useRouter();
   const { userMe, loading, refreshUserMe } = useAuth();
   const { c } = useTheme();
   const [refreshing, setRefreshing] = useState(false);
@@ -27,6 +30,13 @@ export default function HomeScreen() {
       setRefreshing(false);
     }
   }, [refreshUserMe]);
+
+  async function shareReferral() {
+    if (!userMe) return;
+    await Share.share({
+      message: `Join Finmora with my code ${userMe.user.referralCode}!`,
+    });
+  }
 
   if (loading && !userMe) {
     return (
@@ -75,14 +85,24 @@ export default function HomeScreen() {
       />
 
       <View style={styles.actions}>
-        {(["Invest", "Withdraw", "Share"] as const).map((action) => (
-          <Pressable
-            key={action}
-            style={[styles.actionBtn, { backgroundColor: c.card, borderColor: c.border }]}
-          >
-            <Text style={[styles.actionText, { color: c.primary }]}>{action}</Text>
-          </Pressable>
-        ))}
+        <Pressable
+          onPress={() => router.push("/(tabs)/invest")}
+          style={[styles.actionBtn, { backgroundColor: c.card, borderColor: c.border }]}
+        >
+          <Text style={[styles.actionText, { color: c.primary }]}>Invest</Text>
+        </Pressable>
+        <Pressable
+          onPress={() => router.push("/(tabs)/more/withdrawals")}
+          style={[styles.actionBtn, { backgroundColor: c.card, borderColor: c.border }]}
+        >
+          <Text style={[styles.actionText, { color: c.primary }]}>Withdraw</Text>
+        </Pressable>
+        <Pressable
+          onPress={shareReferral}
+          style={[styles.actionBtn, { backgroundColor: c.card, borderColor: c.border }]}
+        >
+          <Text style={[styles.actionText, { color: c.primary }]}>Share</Text>
+        </Pressable>
       </View>
 
       <View style={[styles.card, { backgroundColor: c.card, borderColor: c.border }]}>
