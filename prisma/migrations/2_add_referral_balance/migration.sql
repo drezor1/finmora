@@ -1,0 +1,3 @@
+ALTER TABLE "User" ADD COLUMN "referralBalance" INTEGER NOT NULL DEFAULT 0;
+
+ALTER TABLE "ReferralEarning" ADD COLUMN "paidAt" TIMESTAMP(3);

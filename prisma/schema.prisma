@@ -1,0 +1,327 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum AccountStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum KycStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum WithdrawalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum WithdrawalType {
+  MONTHLY_INCOME
+  REFERRAL_INCOME
+}
+
+enum InvestmentStatus {
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum ReferralEarningStatus {
+  PENDING
+  PAID
+}
+
+enum PenaltyReason {
+  FRAUD
+  SELF_REFERRAL
+  SPAM
+}
+
+enum PenaltyStatus {
+  ACTIVE
+  REVERSED
+}
+
+enum SipStatus {
+  ACTIVE
+  COMPLETED
+}
+
+enum AdType {
+  COMPANY
+  THIRD_PARTY
+}
+
+enum AdStatus {
+  ACTIVE
+  PAUSED
+  PENDING
+}
+
+enum AdInquiryStatus {
+  PENDING
+  CONTACTED
+  CONVERTED
+}
+
+enum NotificationChannel {
+  SMS
+  EMAIL
+  PUSH
+  IN_APP
+  BOTH
+}
+
+enum AdminNotificationStatus {
+  SENT
+  SCHEDULED
+  FAILED
+}
+
+enum UserNotificationType {
+  INCOME
+  REFERRAL
+  WITHDRAWAL
+  KYC
+  SIP
+  GENERAL
+}
+
+enum InvoiceStatus {
+  PAID
+  PENDING
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+}
+
+model User {
+  id            String        @id @default(cuid())
+  name          String
+  email         String        @unique
+  mobile        String        @unique
+  passwordHash  String
+  role          UserRole      @default(USER)
+  referralCode  String        @unique
+  referredById  String?
+  referredBy    User?         @relation("Referrals", fields: [referredById], references: [id])
+  referrals     User[]        @relation("Referrals")
+  kycStatus     KycStatus     @default(PENDING)
+  accountStatus AccountStatus @default(ACTIVE)
+  locale        String        @default("en")
+  referralBalance Int           @default(0)
+  monthlyIncomeBalance Int      @default(0)
+  kycRejectReason   String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  investments       Investment[]
+  withdrawals       Withdrawal[]
+  referralEarnings    ReferralEarning[] @relation("ReferrerEarnings")
+  referredEarnings  ReferralEarning[] @relation("ReferredEarnings")
+  penalties         ReferralPenalty[]
+  sipPlans          SipPlan[]
+  kycDocuments      KycDocument[]
+  userNotifications UserNotification[]
+  invoices          Invoice[]
+  payments          Payment[]
+}
+
+model Investment {
+  id             String           @id @default(cuid())
+  userId         String
+  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  planSlug       String
+  planName       String
+  amount         Int
+  roi            Float
+  monthlyIncome  Int
+  status         InvestmentStatus @default(ACTIVE)
+  startDate      DateTime
+  nextPayout     DateTime?
+  payment        Payment?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+}
+
+model Payment {
+  id                String        @id @default(cuid())
+  userId            String
+  user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  razorpayOrderId   String        @unique
+  razorpayPaymentId String?       @unique
+  amount            Int
+  planSlug          String
+  planName          String
+  status            PaymentStatus @default(PENDING)
+  investmentId      String?       @unique
+  investment        Investment?   @relation(fields: [investmentId], references: [id])
+  paidAt            DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
+model Withdrawal {
+  id          String           @id @default(cuid())
+  userId      String
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount      Int
+  type        WithdrawalType
+  status      WithdrawalStatus @default(PENDING)
+  requestedAt DateTime         @default(now())
+  processedAt DateTime?
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+}
+
+model ReferralEarning {
+  id              String                @id @default(cuid())
+  referrerId      String
+  referrer        User                  @relation("ReferrerEarnings", fields: [referrerId], references: [id], onDelete: Cascade)
+  referredUserId  String
+  referredUser    User                  @relation("ReferredEarnings", fields: [referredUserId], references: [id], onDelete: Cascade)
+  depositAmount   Int
+  commission      Int
+  status          ReferralEarningStatus @default(PENDING)
+  paidAt          DateTime?
+  createdAt       DateTime              @default(now())
+  updatedAt       DateTime              @updatedAt
+}
+
+model ReferralPenalty {
+  id        String        @id @default(cuid())
+  userId    String
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  reason    PenaltyReason
+  amount    Int
+  status    PenaltyStatus @default(ACTIVE)
+  appliedAt DateTime      @default(now())
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model SipPlan {
+  id                 String            @id @default(cuid())
+  userId             String
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lockYears          Int
+  percentOfIncome    Int
+  monthlyAmount      Int
+  totalContributed   Int               @default(0)
+  startDate          DateTime
+  endDate            DateTime
+  lastContributionAt DateTime?
+  status             SipStatus         @default(ACTIVE)
+  contributions      SipContribution[]
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+}
+
+model SipContribution {
+  id            String   @id @default(cuid())
+  sipPlanId     String
+  sipPlan       SipPlan  @relation(fields: [sipPlanId], references: [id], onDelete: Cascade)
+  amount        Int
+  grossIncome   Int
+  contributedAt DateTime @default(now())
+}
+
+model KycDocument {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  docType   String
+  s3Key     String
+  status    KycStatus @default(PENDING)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Ad {
+  id          String   @id @default(cuid())
+  title       String
+  type        AdType
+  advertiser  String
+  status      AdStatus @default(PENDING)
+  impressions Int      @default(0)
+  clicks      Int      @default(0)
+  startDate   DateTime
+  targetUrl   String?
+  imageKey    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AdInquiry {
+  id        String          @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  package   String?
+  status    AdInquiryStatus @default(PENDING)
+  createdAt DateTime        @default(now())
+}
+
+model PlatformSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+model AdminNotification {
+  id             String                  @id @default(cuid())
+  title          String
+  message        String                  @default("")
+  channel        NotificationChannel
+  audience       String
+  status         AdminNotificationStatus @default(SCHEDULED)
+  recipientCount Int                     @default(0)
+  scheduledAt    DateTime?
+  sentAt         DateTime?
+  createdAt      DateTime                @default(now())
+  updatedAt      DateTime                @updatedAt
+}
+
+model UserNotification {
+  id        String               @id @default(cuid())
+  userId    String
+  user      User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  message   String
+  type      UserNotificationType @default(GENERAL)
+  read      Boolean              @default(false)
+  createdAt DateTime             @default(now())
+}
+
+model Invoice {
+  id        String        @id @default(cuid())
+  userId    String
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  invoiceNo String        @unique
+  type      String
+  amount    Int
+  status    InvoiceStatus @default(PAID)
+  issuedAt  DateTime      @default(now())
+  createdAt DateTime      @default(now())
+}

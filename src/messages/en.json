@@ -1,0 +1,845 @@
+{
+  "nav": {
+    "home": "Home",
+    "howItWorks": "How It Works",
+    "plans": "Plans",
+    "features": "Features",
+    "advertise": "Advertise",
+    "login": "Login",
+    "signup": "Get Started",
+    "dashboard": "Dashboard",
+    "admin": "Admin"
+  },
+  "hero": {
+    "badge": "Investment · Referral · SIP Platform",
+    "title": "Grow Smarter with",
+    "titleHighlight": "Finmora",
+    "subtitle": "A complete investment, referral and advertisement management platform — invest your money, earn referral income, and create long-term wealth through SIP.",
+    "ctaPrimary": "Start Investing",
+    "ctaSecondary": "Advertise With Us",
+    "stats": {
+      "users": "Active Users",
+      "invested": "Total Invested",
+      "referrals": "Referral Payouts",
+      "roi": "Avg. Monthly ROI"
+    }
+  },
+  "problem": {
+    "title": "Problems We Solve",
+    "subtitle": "Today's investors face real challenges. Finmora fixes them.",
+    "items": {
+      "complex": {
+        "title": "Investment feels complex",
+        "desc": "Most people find investing confusing and intimidating."
+      },
+      "transparent": {
+        "title": "Opaque referral systems",
+        "desc": "Referral programs lack transparency and trust."
+      },
+      "tracking": {
+        "title": "Poor income tracking",
+        "desc": "Users struggle to track their earnings and withdrawals."
+      },
+      "management": {
+        "title": "Hard to manage at scale",
+        "desc": "Companies can't easily manage investors and ads together."
+      }
+    }
+  },
+  "howItWorks": {
+    "title": "How Finmora Works",
+    "subtitle": "Six simple steps from signup to withdrawal",
+    "steps": {
+      "signup": {
+        "title": "User Signup",
+        "desc": "Register with mobile, email and a mandatory referral code."
+      },
+      "invest": {
+        "title": "Choose a Plan",
+        "desc": "Pick from Infinity Start, Grow or Max based on your budget."
+      },
+      "income": {
+        "title": "Monthly Income",
+        "desc": "Earn monthly ROI on your investment — tracked in your dashboard."
+      },
+      "sip": {
+        "title": "SIP System",
+        "desc": "Allocate 30–50% of monthly income to long-term SIP (1, 3 or 5 years)."
+      },
+      "referral": {
+        "title": "Referral Program",
+        "desc": "Share your unique code — earn 5% when referrals deposit."
+      },
+      "withdraw": {
+        "title": "Withdrawal",
+        "desc": "Withdraw monthly income every 30 days; referral income within 48 hours."
+      }
+    }
+  },
+  "plans": {
+    "title": "Investment Plans",
+    "subtitle": "Three tiers designed for every investor",
+    "popular": "Most Popular",
+    "minMax": "Investment Range",
+    "monthlyRoi": "Monthly ROI",
+    "getStarted": "Choose Plan",
+    "example": "Example: ₹1,00,000 at 10% = ₹10,000/month"
+  },
+  "sip": {
+    "title": "SIP — Systematic Investment Plan",
+    "subtitle": "Turn monthly income into long-term wealth",
+    "allocation": "Allocate 30–50% of monthly income",
+    "lockPeriod": "Lock Period",
+    "years": "{years} Year",
+    "yearsPlural": "{years} Years"
+  },
+  "referral": {
+    "title": "Referral Program",
+    "subtitle": "Grow your network, grow your income",
+    "commission": "5% Referral Income",
+    "desc": "Every user gets a unique referral code. When someone joins with your code and deposits, you earn 5% referral income.",
+    "uniqueCode": "Unique Referral Code",
+    "instantTracking": "Real-time Tracking",
+    "leaderboard": "Leaderboard Rankings"
+  },
+  "withdrawal": {
+    "title": "Withdrawal System",
+    "monthly": "Monthly Income",
+    "monthlyRule": "Once every 30 days",
+    "referral": "Referral Income",
+    "referralRule": "Processed within 48 hours",
+    "statuses": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "subtitle": "Full platform control at your fingertips",
+    "features": {
+      "users": "User Management — total users, KYC, investments",
+      "withdrawals": "Withdrawal Management — approve or reject",
+      "referrals": "Referral Management — tracking, payouts, penalties",
+      "sip": "SIP Management — contributions, lock periods, reports",
+      "ads": "Advertisement System — company ads & third-party networks",
+      "notifications": "Notifications — SMS, email & push alerts"
+    }
+  },
+  "features": {
+    "title": "Platform Features",
+    "subtitle": "Everything you need in one place",
+    "list": {
+      "dashboard": "Investment Dashboard",
+      "referralDash": "Referral Dashboard",
+      "sipDash": "SIP Dashboard",
+      "kyc": "KYC Verification",
+      "withdrawal": "Withdrawal System",
+      "alerts": "SMS & Email Alerts",
+      "ai": "Finmora Buddy (AI Assistant)",
+      "advertise": "Advertise With Finmora",
+      "adminPanel": "Admin Panel",
+      "invoice": "Invoice Generator",
+      "ads": "Ad Management System",
+      "leaderboard": "Leaderboard",
+      "push": "Push Notifications",
+      "multilang": "Multi-Language Support"
+    }
+  },
+  "revenue": {
+    "title": "Revenue Sources",
+    "subtitle": "Multiple income streams for sustainable growth",
+    "sources": {
+      "investment": "Investment Management",
+      "referral": "Referral System",
+      "sip": "SIP Funds",
+      "companyAds": "Company Advertisements",
+      "thirdParty": "Third-Party Ad Networks"
+    }
+  },
+  "cta": {
+    "title": "Ready to Build Your Wealth?",
+    "subtitle": "Join thousands of investors earning monthly income, referral rewards and long-term SIP growth.",
+    "primary": "Create Free Account",
+    "secondary": "Talk to Finmora Buddy"
+  },
+  "footer": {
+    "tagline": "Complete investment, referral & advertisement management platform.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "about": "About Us",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved."
+  },
+  "signup": {
+    "title": "Create Your Account",
+    "subtitle": "Join Finmora with a referral code",
+    "name": "Full Name",
+    "email": "Email Address",
+    "mobile": "Mobile Number",
+    "referralCode": "Referral Code",
+    "referralRequired": "Referral code is mandatory",
+    "password": "Password",
+    "submit": "Sign Up",
+    "hasAccount": "Already have an account?",
+    "loginLink": "Login here"
+  },
+  "login": {
+    "title": "Welcome Back",
+    "subtitle": "Login to your Finmora account",
+    "emailOrMobile": "Email or Mobile",
+    "password": "Password",
+    "submit": "Login",
+    "noAccount": "Don't have an account?",
+    "signupLink": "Sign up here"
+  },
+  "advertise": {
+    "title": "Advertise With Finmora",
+    "subtitle": "Reach thousands of active investors on our platform",
+    "companyAd": "Company Advertisement",
+    "companyAdDesc": "Finance, insurance, real estate and more — showcase your business to our investor community.",
+    "packages": "Ad Packages",
+    "inquiry": "Send Inquiry",
+    "name": "Business Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Tell us about your ad requirements",
+    "submit": "Submit Inquiry",
+    "submitting": "Submitting…",
+    "reach": "Active investors reach",
+    "successTitle": "Inquiry sent!",
+    "successMessage": "Our team will contact you within 1–2 business days.",
+    "submitAnother": "Submit another inquiry"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back",
+    "userName": "Rahul Sharma",
+    "totalInvestment": "Total Investment",
+    "monthlyIncome": "Monthly Income",
+    "referralEarnings": "Referral Earnings",
+    "sipBalance": "SIP Balance",
+    "recentActivity": "Recent Activity",
+    "activePlan": "Active Plan",
+    "referralCode": "Referral Code",
+    "kycStatus": "KYC Status",
+    "viewInvestments": "View Investments",
+    "requestWithdrawal": "Request Withdrawal",
+    "portfolioValue": "Total Portfolio",
+    "thisMonth": "this month",
+    "kycVerified": "Verified",
+    "quickInvest": "Invest",
+    "quickWithdraw": "Withdraw",
+    "quickShare": "Share",
+    "noActivity": "No activity yet",
+    "noActivePlan": "No active plan — start investing today",
+    "ads": {
+      "sponsored": "Sponsored"
+    },
+    "nav": {
+      "overview": "Overview",
+      "investments": "Investments",
+      "referrals": "Referrals",
+      "sip": "SIP",
+      "withdrawals": "Withdrawals",
+      "leaderboard": "Leaderboard",
+      "invoices": "Invoices",
+      "settings": "Settings",
+      "more": "More",
+      "logout": "Logout"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "markAllRead": "Mark all as read"
+    },
+    "buddy": {
+      "title": "Finmora Buddy",
+      "greeting": "Hi! I'm Finmora Buddy. Ask me about investments, referrals, withdrawals, or SIP.",
+      "placeholder": "Ask a question...",
+      "defaultReply": "I can help with investments, referrals, SIP, and withdrawals. Try one of the quick questions below, or ask something specific!",
+      "thinking": "Thinking...",
+      "errorReply": "Sorry, I couldn't fetch an answer right now. Please try again or pick a quick question below.",
+      "quickReplies": [
+        "How do I invest?",
+        "My plan",
+        "My balance",
+        "Referral code",
+        "When can I withdraw?",
+        "What is SIP?",
+        "KYC status"
+      ]
+    },
+    "investments": {
+      "title": "Investments",
+      "subtitle": "Manage your Infinity plans and track ROI",
+      "history": "Investment History",
+      "plan": "Plan",
+      "amount": "Amount",
+      "roi": "ROI",
+      "monthly": "Monthly Income",
+      "startDate": "Start Date",
+      "nextPayout": "Next payout",
+      "upgradeTitle": "Add or Upgrade Plan",
+      "perMonth": "per month",
+      "investNow": "Invest Now"
+    },
+    "referrals": {
+      "title": "Referrals",
+      "subtitle": "Track your network and referral earnings",
+      "yourCode": "Your Referral Code",
+      "commission": "Earn {percent}% on every referral deposit",
+      "totalReferrals": "Total Referrals",
+      "totalEarned": "Total Earned",
+      "pending": "Pending Payout",
+      "availableBalance": "Available Balance",
+      "earningsTitle": "Commission Earnings",
+      "noNetwork": "No one has joined with your code yet.",
+      "network": "Your Referral Network",
+      "viewLeaderboard": "Leaderboard",
+      "name": "Name",
+      "joinDate": "Join Date",
+      "deposit": "Deposit",
+      "commissionCol": "Commission",
+      "status": "Status",
+      "earningsChart": "Earnings Trend"
+    },
+    "sip": {
+      "title": "SIP",
+      "subtitle": "Systematic Investment Plan — long-term wealth",
+      "totalContributed": "Total Contributed",
+      "projectedValue": "Projected Value",
+      "lockPeriod": "Lock Period",
+      "years": "Years",
+      "allocation": "Income Allocation",
+      "activeSip": "Active SIP",
+      "monthlyContribution": "Monthly Contribution",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "active": "Active",
+      "adjustAllocation": "Adjust Allocation",
+      "adjustDesc": "Choose 30–50% of monthly income and lock period",
+      "saveChanges": "Save Changes",
+      "contributionHistory": "Contribution History",
+      "lockProgress": "Lock Progress",
+      "contributionChart": "Contributions",
+      "enrollTitle": "Start Your SIP",
+      "enrollDesc": "Allocate 30–50% of your monthly income to long-term wealth with a 1, 3, or 5 year lock.",
+      "startSip": "Start SIP",
+      "noActiveInvestment": "You need an active investment before starting SIP.",
+      "daysRemaining": "Days Remaining",
+      "sipEnrolled": "SIP enrolled successfully!",
+      "sipUpdated": "SIP allocation updated.",
+      "noContributions": "No contributions yet.",
+      "completed": "Completed",
+      "grossIncome": "Monthly income"
+    },
+    "withdrawals": {
+      "title": "Withdrawals",
+      "subtitle": "Request and track your payouts",
+      "monthlyRule": "Monthly Income",
+      "monthlyRuleDesc": "Withdraw once every 30 days after admin approval",
+      "referralRule": "Referral Income",
+      "referralRuleDesc": "Processed within 48 hours",
+      "requestTitle": "New Withdrawal Request",
+      "requestSuccess": "Withdrawal request submitted! Admin will review within 24–48 hours.",
+      "monthly_income": "Monthly Income",
+      "referral_income": "Referral Income",
+      "amount": "Amount (₹)",
+      "submit": "Submit Request",
+      "all": "All",
+      "id": "ID",
+      "type": "Type",
+      "date": "Date",
+      "statusLabel": "Status",
+      "status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      },
+      "nextAvailable": "Next withdrawal available in {days} days",
+      "pipeline": "Withdrawal Pipeline",
+      "availableMonthly": "Available Monthly Income",
+      "availableReferral": "Available Referral Income",
+      "maxAvailable": "Max available",
+      "pendingMonthlyBlocked": "You have a pending monthly withdrawal or no available balance."
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Profile, KYC, password, and notifications",
+      "profile": "Profile",
+      "name": "Full Name",
+      "emailAddress": "Email",
+      "mobile": "Mobile",
+      "referralCode": "Referral Code",
+      "saveProfile": "Save Profile",
+      "saved": "Saved!",
+      "kyc": "KYC Verification",
+      "kycStatus": {
+        "pending": "Pending",
+        "verified": "Verified",
+        "rejected": "Rejected"
+      },
+      "kycVerified": "Your KYC is verified. No action needed.",
+      "kycUploadDesc": "Upload Aadhaar and PAN to verify your identity before withdrawals.",
+      "aadhaar": "Aadhaar Card",
+      "pan": "PAN Card",
+      "clickUpload": "Click to upload",
+      "submitKyc": "Submit for Verification",
+      "kycUnderReview": "Both documents uploaded — under admin review.",
+      "kycRejected": "Your KYC was rejected. Please upload clear documents again.",
+      "kycRejectReason": "Reason",
+      "docUploaded": "Uploaded",
+      "docMissing": "Not uploaded yet",
+      "uploadSuccess": "Document uploaded successfully.",
+      "password": "Change Password",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm password",
+      "updatePassword": "Update Password",
+      "appearance": "Appearance",
+      "appearanceDesc": "Switch between light and dark mode",
+      "notifications": "Notification Preferences",
+      "sms": "SMS Alerts",
+      "email": "Email Alerts",
+      "push": "Push Notifications"
+    },
+    "leaderboard": {
+      "title": "Leaderboard",
+      "subtitle": "Top referrers this month",
+      "referrals": "referrals",
+      "fullRankings": "Full Rankings",
+      "you": "You"
+    },
+    "invoices": {
+      "title": "Invoices & Receipts",
+      "subtitle": "Download transaction records",
+      "invoiceId": "Invoice ID",
+      "type": "Type",
+      "amount": "Amount",
+      "date": "Date",
+      "status": "Status",
+      "action": "Action",
+      "generateNote": "PDF invoices are generated for all completed transactions.",
+      "downloadAll": "Download All (ZIP)"
+    }
+  },
+  "adminPanel": {
+    "login": {
+      "title": "Admin Login",
+      "subtitle": "Sign in to access the Finmora admin panel",
+      "email": "Admin Email",
+      "password": "Password",
+      "submit": "Sign In",
+      "demoHint": "Demo: use admin@finmora.in with any password",
+      "backHome": "Back to home"
+    },
+    "nav": {
+      "overview": "Overview",
+      "users": "Users",
+      "withdrawals": "Withdrawals",
+      "referrals": "Referrals",
+      "sip": "SIP",
+      "ads": "Advertisements",
+      "notifications": "Notifications",
+      "userDashboard": "User Dashboard",
+      "logout": "Exit Admin"
+    },
+    "overview": {
+      "title": "Admin Overview",
+      "subtitle": "Platform metrics and pending actions at a glance",
+      "pendingWithdrawals": "Pending Withdrawals",
+      "pendingKyc": "Pending KYC Reviews",
+      "viewAll": "View All"
+    },
+    "stats": {
+      "totalUsers": "Total Users",
+      "pendingKyc": "Pending KYC",
+      "needsReview": "Needs review",
+      "totalInvested": "Total Invested",
+      "pendingWithdrawals": "Pending Withdrawals"
+    },
+    "users": {
+      "title": "User Management",
+      "subtitle": "Manage users, KYC verification, and investments",
+      "searchPlaceholder": "Search by name, email or mobile...",
+      "all": "All Users",
+      "noResults": "No users found",
+      "showing": "Showing {count} of {total} users",
+      "suspend": "Suspend Account",
+      "reactivate": "Reactivate Account",
+      "suspended": "Account suspended",
+      "reactivated": "Account reactivated",
+      "detail": {
+        "title": "User Details",
+        "view": "View user",
+        "mobile": "Mobile",
+        "joined": "Joined",
+        "referredBy": "Referred By",
+        "referrals": "Total Referrals",
+        "accountStatus": "Account Status",
+        "active": "Active",
+        "suspended": "Suspended"
+      },
+      "kycSection": "KYC Documents",
+      "viewDocument": "View document",
+      "mockDocument": "Mock upload (dev)",
+      "bothDocsRequired": "Both Aadhaar and PAN required to approve",
+      "approveKyc": "Approve KYC",
+      "rejectKyc": "Reject KYC",
+      "rejectReasonPlaceholder": "Optional rejection reason for the user",
+      "kycApproved": "KYC approved",
+      "kycRejected": "KYC rejected"
+    },
+    "withdrawals": {
+      "title": "Withdrawal Management",
+      "subtitle": "Approve or reject withdrawal requests",
+      "all": "All",
+      "pendingCount": "Pending Requests",
+      "pendingAmount": "Pending Amount",
+      "totalProcessed": "Total Approved",
+      "slaOverdue": "SLA Overdue",
+      "slaOverdueFilter": "Referral Overdue (48h+)",
+      "slaOverdueCount": "Overdue Referral Requests",
+      "approveSuccess": "Withdrawal approved",
+      "rejectSuccess": "Withdrawal rejected",
+      "types": {
+        "monthly_income": "Monthly Income",
+        "referral_income": "Referral Income"
+      }
+    },
+    "referrals": {
+      "title": "Referral Management",
+      "subtitle": "Track referral network, earnings, and payouts",
+      "totalReferrals": "Total Referrals",
+      "totalEarnings": "Total Earnings",
+      "pendingPayouts": "Pending Payouts",
+      "topReferrers": "Active Referrers",
+      "leaderboard": "Top Referrers Leaderboard",
+      "referrals": "referrals",
+      "earnings": "Earnings",
+      "pending": "Pending Payout",
+      "approvePayout": "Approve Payout",
+      "applyPenalty": "Apply Penalty",
+      "penalties": "Referral Penalties",
+      "penaltyReason": "Reason",
+      "penaltyFor": "Penalty for",
+      "penaltyApplied": "Penalty applied successfully",
+      "payoutApproved": "Payout approved successfully",
+      "penaltyReversedSuccess": "Penalty reversed successfully",
+      "reversePenalty": "Reverse",
+      "availableBalance": "Available Balance",
+      "penaltyActive": "Active",
+      "penaltyReversed": "Reversed",
+      "reasons": {
+        "fraud": "Fraudulent Activity",
+        "self_referral": "Self Referral",
+        "spam": "Spam / Fake Accounts"
+      }
+    },
+    "sip": {
+      "title": "SIP Management",
+      "subtitle": "Monitor SIP contributions, lock periods, and reports",
+      "activeUsers": "Active SIP Users",
+      "totalContributions": "Total Contributions",
+      "activePlans": "Active SIP Plans",
+      "allocation": "Allocation",
+      "lockPeriod": "Lock Period",
+      "monthlyAmount": "Monthly Amount",
+      "totalContributedCol": "Total Contributed",
+      "period": "Period",
+      "year": "Year",
+      "years": "Years",
+      "exportReport": "Export Report",
+      "exportSuccess": "SIP report downloaded",
+      "filters": {
+        "all": "All",
+        "active": "Active",
+        "completed": "Completed",
+        "lock1": "1 Year Lock",
+        "lock3": "3 Year Lock",
+        "lock5": "5 Year Lock"
+      },
+      "status": {
+        "active": "Active",
+        "completed": "Completed"
+      }
+    },
+    "ads": {
+      "title": "Advertisement Management",
+      "subtitle": "Manage company ads and third-party ad networks",
+      "subtitleCompany": "Manage company advertisements and business inquiries",
+      "all": "All Ads",
+      "company": "Company Ads",
+      "thirdParty": "Third Party",
+      "inquiries": "Inquiries",
+      "activeAds": "Active Ads",
+      "impressions": "Total Impressions",
+      "clicks": "Total Clicks",
+      "pendingInquiries": "Pending Inquiries",
+      "adTitle": "Ad Title",
+      "advertiser": "Advertiser",
+      "targetUrl": "Target URL",
+      "imageKey": "Image URL / storage path",
+      "uploadImage": "Upload banner image",
+      "uploading": "Uploading…",
+      "imageUploaded": "Image uploaded",
+      "mockUpload": "Mock path saved (dev mode)",
+      "uploadFailed": "Image upload failed",
+      "saveFirstForUpload": "Create the ad first, then upload an image",
+      "package": "Package",
+      "inquiryMessage": "Message",
+      "markContacted": "Mark contacted",
+      "markConverted": "Mark converted",
+      "createFromInquiry": "Create ad",
+      "approveSuccess": "Ad approved and live on dashboard",
+      "pause": "Pause",
+      "activate": "Activate",
+      "createAd": "Create Ad",
+      "editAd": "Edit Ad",
+      "deleteAd": "Delete Ad",
+      "createSuccess": "Ad created successfully",
+      "editSuccess": "Ad updated successfully",
+      "deleteSuccess": "Ad deleted successfully",
+      "inquiryStatus": {
+        "pending": "Pending",
+        "contacted": "Contacted",
+        "converted": "Converted"
+      },
+      "adsense": {
+        "title": "Google AdSense / Third-Party Ads",
+        "enable": "Enable third-party ad scripts",
+        "publisherId": "Publisher ID",
+        "adCode": "Ad Script / HTML Code",
+        "lastUpdated": "Last updated",
+        "save": "Save Ad Settings",
+        "saved": "Ad settings saved"
+      },
+      "status": {
+        "active": "Active",
+        "paused": "Paused",
+        "pending": "Pending"
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "subtitle": "Send in-app alerts and email to users",
+      "compose": "Compose Notification",
+      "channel": "Channel",
+      "channelInApp": "In-App",
+      "channelEmail": "Email",
+      "channelBoth": "Both",
+      "channelLabel": {
+        "in_app": "In-App",
+        "email": "Email",
+        "both": "Both",
+        "sms": "SMS",
+        "push": "Push"
+      },
+      "recipients": "Recipients",
+      "notifTitle": "Title",
+      "titlePlaceholder": "Notification title...",
+      "message": "Message",
+      "messagePlaceholder": "Write your notification message...",
+      "audience": "Audience",
+      "allUsers": "All Users",
+      "activeInvestors": "Active Investors",
+      "pendingKyc": "Pending KYC Users",
+      "pendingWithdrawals": "Pending Withdrawal Users",
+      "sendNow": "Send Now",
+      "schedule": "Schedule",
+      "scheduleAt": "Schedule Date & Time",
+      "history": "Sent & Scheduled",
+      "sentSuccess": "Notification sent successfully",
+      "sentSuccessCount": "Sent to {count} users",
+      "scheduledSuccess": "Notification scheduled successfully",
+      "status": {
+        "sent": "Sent",
+        "scheduled": "Scheduled",
+        "failed": "Failed"
+      }
+    },
+    "table": {
+      "id": "ID",
+      "user": "User",
+      "name": "Name",
+      "email": "Email",
+      "contact": "Contact",
+      "amount": "Amount",
+      "type": "Type",
+      "date": "Date",
+      "status": "Status",
+      "actions": "Actions",
+      "plan": "Plan",
+      "investment": "Investment",
+      "referralCode": "Referral Code",
+      "kyc": "KYC"
+    },
+    "kyc": {
+      "pending": "Pending",
+      "verified": "Verified",
+      "rejected": "Rejected"
+    },
+    "status": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    },
+    "actions": {
+      "approve": "Approve",
+      "reject": "Reject"
+    }
+  },
+  "metadata": {
+    "home": {
+      "title": "Finmora — Investment, Referral & SIP Platform",
+      "description": "Invest, earn referral income, and build long-term wealth through SIP. Complete investment and advertisement management platform."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Learn about Finmora — our mission to simplify investment, referral income, and automated wealth management."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with the Finmora team for support, partnerships, or general inquiries."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Read how Finmora collects, uses, and protects your personal and financial information."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "description": "Terms and conditions for using the Finmora investment, referral, and SIP platform."
+    },
+    "signup": {
+      "title": "Sign Up",
+      "description": "Create your Finmora account with a referral code and start your investment journey."
+    },
+    "login": {
+      "title": "Login",
+      "description": "Sign in to your Finmora account to manage investments, referrals, and SIP."
+    },
+    "advertise": {
+      "title": "Advertise With Finmora",
+      "description": "Reach active investors on Finmora. Book company ads or explore partnership opportunities."
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "About Finmora",
+      "subtitle": "Making investment simple, transparent, and accessible for everyone.",
+      "sections": [
+        {
+          "title": "Our Mission",
+          "content": "Finmora was built to solve a simple problem: investing shouldn't be complicated. We provide a complete platform where users can invest, track monthly income, earn referral rewards, and grow long-term wealth through SIP — all in one place."
+        },
+        {
+          "title": "What We Do",
+          "content": "We offer three investment tiers (Infinity Start, Grow, and Max), a transparent 5% referral program, automated SIP management, and a full admin system for platform operators. Businesses can also advertise to our active investor community."
+        },
+        {
+          "title": "Our Values",
+          "content": "Transparency — every transaction and earning is visible in your dashboard.\nSimplicity — invest in minutes, not days.\nTrust — KYC verification, secure withdrawals, and admin oversight on every payout.\nGrowth — referral income and SIP work together to build long-term wealth."
+        },
+        {
+          "title": "Who We Serve",
+          "content": "Individual investors looking for monthly returns, network builders earning through referrals, businesses seeking ad visibility among finance-minded audiences, and platform administrators who need full control over users, withdrawals, and advertisements."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "We're here to help. Reach out for support, partnerships, or general questions.",
+      "info": {
+        "email": "Email",
+        "phone": "Phone",
+        "address": "Office",
+        "addressValue": "Finmora HQ, India",
+        "hours": "Support Hours",
+        "hoursValue": "Mon – Sat, 9:00 AM – 6:00 PM IST"
+      },
+      "form": {
+        "title": "Send a Message",
+        "subtitle": "Fill out the form and our team will respond within 24–48 hours.",
+        "name": "Your Name",
+        "email": "Email Address",
+        "subject": "Subject",
+        "message": "Your Message",
+        "submit": "Send Message",
+        "success": "Thank you! Your message has been received. We'll get back to you soon."
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "How we collect, use, and protect your information.",
+      "updated": "Last updated: June 2026",
+      "sections": [
+        {
+          "title": "Information We Collect",
+          "content": "We collect information you provide during registration (name, email, mobile number, referral code), KYC documents (identity verification), investment and transaction data, and usage information when you interact with our platform."
+        },
+        {
+          "title": "How We Use Your Information",
+          "content": "Your data is used to operate your account, process investments and withdrawals, calculate referral commissions and SIP contributions, send SMS/email/push notifications about account activity, verify your identity (KYC), and improve our services."
+        },
+        {
+          "title": "Data Sharing",
+          "content": "We do not sell your personal information. We may share data with payment processors, SMS/email service providers, and regulatory authorities when required by law. Advertisers on our platform do not receive your personal financial data."
+        },
+        {
+          "title": "Data Security",
+          "content": "We implement industry-standard security measures including encrypted connections (HTTPS), secure password storage, and access controls. However, no system is 100% secure — please use a strong password and keep your login credentials private."
+        },
+        {
+          "title": "Your Rights",
+          "content": "You may request access to, correction of, or deletion of your personal data by contacting support@finmora.in. KYC and transaction records may be retained as required by applicable financial regulations."
+        },
+        {
+          "title": "Contact",
+          "content": "For privacy-related questions, email us at support@finmora.in."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "subtitle": "Please read these terms carefully before using Finmora.",
+      "updated": "Last updated: June 2026",
+      "sections": [
+        {
+          "title": "Acceptance of Terms",
+          "content": "By creating an account or using Finmora, you agree to these Terms of Service and our Privacy Policy. If you do not agree, please do not use the platform."
+        },
+        {
+          "title": "Eligibility",
+          "content": "You must be at least 18 years old and legally capable of entering financial agreements in your jurisdiction. A valid referral code is required for registration. KYC verification is mandatory before withdrawals."
+        },
+        {
+          "title": "Investment Plans",
+          "content": "Finmora offers three investment tiers: Infinity Start (₹10,000–₹99,000), Infinity Grow (₹1,00,000–₹9,99,000), and Infinity Max (₹10,00,000–₹1,00,00,000). Monthly ROI rates are displayed on the platform and may vary by plan. Past performance does not guarantee future returns."
+        },
+        {
+          "title": "Referral Program",
+          "content": "Each user receives a unique referral code. When a referred user makes a deposit, the referrer earns 5% referral income. Referral income withdrawals are processed within 48 hours subject to admin approval. Fraudulent referral activity may result in account suspension."
+        },
+        {
+          "title": "SIP & Withdrawals",
+          "content": "Users may allocate 30–50% of monthly income to SIP with lock periods of 1, 3, or 5 years. Monthly income withdrawals are allowed once every 30 days. All withdrawal requests are subject to admin review and KYC verification."
+        },
+        {
+          "title": "Prohibited Activities",
+          "content": "Users may not create fake accounts, manipulate referral systems, provide false KYC documents, or use the platform for money laundering or illegal activities. Violations result in immediate account termination and forfeiture of pending payouts."
+        },
+        {
+          "title": "Limitation of Liability",
+          "content": "Finmora is provided \"as is.\" We are not liable for investment losses, service interruptions, or third-party actions. Users invest at their own risk and should consult a financial advisor before making investment decisions."
+        },
+        {
+          "title": "Changes to Terms",
+          "content": "We may update these terms at any time. Continued use of the platform after changes constitutes acceptance. Material changes will be communicated via email or platform notification."
+        }
+      ]
+    }
+  }
+}
