@@ -7,8 +7,7 @@
     "advertise": "Advertise",
     "login": "Login",
     "signup": "Get Started",
-    "dashboard": "Dashboard",
-    "admin": "Admin"
+    "dashboard": "Dashboard"
   },
   "hero": {
     "badge": "Investment · Referral · SIP Platform",
@@ -114,18 +113,6 @@
       "rejected": "Rejected"
     }
   },
-  "admin": {
-    "title": "Admin Panel",
-    "subtitle": "Full platform control at your fingertips",
-    "features": {
-      "users": "User Management — total users, KYC, investments",
-      "withdrawals": "Withdrawal Management — approve or reject",
-      "referrals": "Referral Management — tracking, payouts, penalties",
-      "sip": "SIP Management — contributions, lock periods, reports",
-      "ads": "Advertisement System — company ads & third-party networks",
-      "notifications": "Notifications — SMS, email & push alerts"
-    }
-  },
   "features": {
     "title": "Platform Features",
     "subtitle": "Everything you need in one place",
@@ -138,7 +125,6 @@
       "alerts": "SMS & Email Alerts",
       "ai": "Finmora Buddy (AI Assistant)",
       "advertise": "Advertise With Finmora",
-      "adminPanel": "Admin Panel",
       "invoice": "Invoice Generator",
       "ads": "Ad Management System",
       "leaderboard": "Leaderboard",

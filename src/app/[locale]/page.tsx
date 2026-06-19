@@ -13,7 +13,6 @@ import { SipSection } from "@/components/landing/sip-section";
 import { ReferralSection } from "@/components/landing/referral-section";
 import { WithdrawalSection } from "@/components/landing/withdrawal-section";
 import { RevenueSection } from "@/components/landing/revenue-section";
-import { AdminSection } from "@/components/landing/admin-section";
 import { CtaSection } from "@/components/landing/cta-section";
 
 type Props = {
@@ -48,7 +47,6 @@ export default async function HomePage({ params }: Props) {
         <ReferralSection />
         <WithdrawalSection />
         <RevenueSection />
-        <AdminSection />
         <CtaSection />
       </main>
       <Footer />
