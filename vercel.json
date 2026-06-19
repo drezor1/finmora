@@ -1,0 +1,12 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/roi-credit",
+      "schedule": "0 2 * * *"
+    },
+    {
+      "path": "/api/cron/notifications-dispatch",
+      "schedule": "*/15 * * * *"
+    }
+  ]
+}
